@@ -1,6 +1,6 @@
 // App State
 const state = {
-    version: '4.10', // [F] Update version
+    version: '5.00', // [F] Update version
     presets: [],
     records: [],
     activeView: 'presets', // 'presets', 'dashboard', 'settings'
