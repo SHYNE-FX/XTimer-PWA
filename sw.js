@@ -1,5 +1,5 @@
-// X-Timer Service Worker — v4.10
-const CACHE_NAME = 'xtimer-v4.10';
+// X-Timer Service Worker — v5.00
+const CACHE_NAME = 'xtimer-v5.00';
 
 // App shell — always cache on install
 const SHELL_ASSETS = [
