@@ -54,8 +54,11 @@ function startTimer() {
         
         const nextPhaseType = currentPhaseIndex + 1 < phases.length ? phases[currentPhaseIndex+1].type : null;
 
-        if (timeRemaining === 10) {
-            if (nextPhaseType === 'work') playAudio(audioElements.readyWork);
+        if (timeRemaining === 8) {
+            if (phases[currentPhaseIndex].type === 'rest') {
+                const currentSetNum = phases[currentPhaseIndex].set;
+                if(setAudios[currentSetNum]) playAudio(setAudios[currentSetNum]);
+            }
         }
 
         if (timeRemaining === 7) {
@@ -68,10 +71,7 @@ function startTimer() {
 
         if (timeRemaining === 5) {
             if (nextPhaseType === 'rest') playAudio(audioElements.readyRest);
-            if (phases[currentPhaseIndex].type === 'rest') {
-                const currentSetNum = phases[currentPhaseIndex].set;
-                if(setAudios[currentSetNum]) playAudio(setAudios[currentSetNum]);
-            }
+            if (nextPhaseType === 'work') playAudio(audioElements.readyWork);
         }
 
         if (timeRemaining > 0 && timeRemaining <= 3) {
